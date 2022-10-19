@@ -73,6 +73,10 @@ pipeline {
                     configs: 'train-schedule-kube.yml',
                     enableConfigSubstitution: true
                 )
+                kubernetesDeploy(
+                    kubeconfigId: 'kubeconfig',
+                    configs: 'hpa.yml'
+                )                
             }
         }
     }
